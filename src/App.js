@@ -11,6 +11,7 @@ function App() {
         </p>
         <p>
           Edit <code>src/App.js</code> Hello, it's a new dawn again.
+          Edit <code>src/App.js</code> Hello.
         </p>
         <a
           className="App-link"
