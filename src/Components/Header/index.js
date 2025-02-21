@@ -2,11 +2,17 @@
     import Logo from '../../assets/images/logo.png';
     import CountryDropdown from '../CountryDropdown';
     import Button from '@mui/material/Button';
-    import { IoIosSearch } from 'react-icons/io';
     import { FiUser } from 'react-icons/fi';
     import { IoBagOutline } from 'react-icons/io5';
+    import SearchBox from './SearchBox';
+    import Navigation from './Navigation';
+    import { useContext } from 'react';
+    import { MyContext } from '../../App';
 
     const Header = () => {
+
+        const context = useContext(MyContext);
+
         return(
             <>
                 <div className="headerWrapper">
@@ -23,14 +29,13 @@
                                 </div>
 
                                 <div className='col-sm-10 d-flex align-items-center part2'>
-                                    <CountryDropdown />
+                                    
+                                    {
+                                        context.countryList.length!==0 && <CountryDropdown />
+                                    }
 
-                                    {/* Header Search Starts Here */}
-                                        <div className='headerSearch ml-3 mr-3'>
-                                            <input type='text' placeholder='Search for products...'/>
-                                            <Button><IoIosSearch /></Button>
-                                        </div>
-                                    {/* Header Search Ends Here */}
+                                    <SearchBox />
+                                        
 
                                     <div className='part3 d-flex align-items-center ml-auto'>
                                         <Button className='circle mr-3'><FiUser /></Button>
@@ -47,6 +52,10 @@
                             </div>
                         </div>
                     </header>
+
+                    <Navigation />
+
+                   
 
 
                 </div>
