@@ -1,10 +1,13 @@
+import HomeBanner from "../../Components/HomeBanner";
+import React from "react";
+
    
    const Home =()=>{
     return(
         <>
-            <h1>Home page</h1>
+            <HomeBanner/>
         </>
-    )
+    );
    }
 
-   export default Home
+   export default Home;
